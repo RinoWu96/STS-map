@@ -1,0 +1,53 @@
+STS Line Scan Analysis Tool - User Guide
+========================================
+
+1. Overview
+This program analyses STS line-scan data (Omicron .dat format). It plots
+dI/dV maps, automatically detects the conduction band minimum (Ec / CBM)
+and valence band maximum (Ev / VBM), and calculates the band gap Eg.
+
+2. Launching
+- Double-click dist\STS_map.exe, or
+- Run it from Python: python STS_map.py
+
+3. Basic Workflow
+1) Language: switch between Chinese and English in the top-right corner.
+2) Select data: click "Browse" and choose the folder that holds the .dat
+   files of one line scan. The program reads the column names and tries to
+   pick the Bias, Current and LI Demod columns for you. If it picks the
+   wrong column, change it in the drop-down list.
+3) Choose an analysis type:
+   - Ec_log        : finds the conduction band edge Ec only (for data
+                     measured at positive bias only)
+   - newBG         : finds Ec and Ev and calculates the band gap Eg
+   - line          : plots a stack of the dI/dV curves, one per point
+                     (does not find band edges)
+   - Line CBM VBM  : plots the stacked curves with CBM / VBM marked
+4) Display options (optional):
+   - Log LI Demod Map         : shows dI/dV on a log scale
+   - Quick Normalization (gN) : normalises dI/dV
+5) Parameters (optional): click "Parameters" to change the algorithm
+   settings for the current analysis type, then save them. If you are not
+   sure what to change, keep the defaults.
+6) Click "Run Analysis". The plots appear on the right, the results table
+   on the left lists Ec / Ev / Eg for each point, and the log window shows
+   progress and statistics.
+
+4. Manual Correction
+- Double-click an Ec or Ev cell in the results table to edit its value.
+- Then click "Update Plot". The plots and band-gap statistics are
+  recalculated from the edited values.
+
+5. Saving Results
+- Save Fig1 / Save Fig2: export the matching figure as SVG, PDF or PNG.
+- Save Gap Results: export the results table as TXT or CSV.
+  (In "line" mode this button changes to "Save Line Plot Data" and
+  exports the curve data instead.)
+
+6. Notes
+- The program analyses one folder at a time. The folder should hold the
+  .dat files of one line scan only.
+- When you select a new folder, the voltage display range resets to its
+  default.
+- If an error occurs, read the message in the log window first, then
+  check that the right columns are selected.
