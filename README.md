@@ -5,6 +5,12 @@ It plots dI/dV maps, automatically detects the conduction band minimum (Ec / CBM
 
 [中文使用说明](使用说明_中文.txt) · [English User Guide](User_Guide_EN.txt)
 
+**Related STM/STS data-processing tools:**
+
+- **STS-map** (this repo): STS line-scan analysis: dI/dV maps, CBM/VBM detection and band gap along the line
+- [BandGap](https://github.com/RinoWu96/BandGap): band gap extraction from single STS spectra
+- [STM-GPA](https://github.com/RinoWu96/STM-GPA): lattice-strain mapping of STM topographs with geometric phase analysis
+
 ## Features
 
 - dI/dV map of a full line scan, with optional log scale and quick normalisation (gN)
